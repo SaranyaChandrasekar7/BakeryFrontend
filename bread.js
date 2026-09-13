@@ -14,7 +14,7 @@ async function loadBread() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/product");
+        const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
         const products = await response.json();
 
         const breads = products.filter(
@@ -35,7 +35,7 @@ async function loadBread() {
 
                 <div class="bread-card">
 
-                     <img src="http://localhost:5000${product.image}" 
+                     <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
      alt="${product.name}">
                     <h2>${product.name}</h2>
 

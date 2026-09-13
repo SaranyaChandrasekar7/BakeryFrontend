@@ -22,7 +22,7 @@ async function loadOrders() {
     try {
 
         const response =
-            await fetch("http://localhost:5000/api/order");
+            await fetch("https://bakerybackend-7vre.onrender.com/api/order");
 
         const orders =
             await response.json();
@@ -337,7 +337,7 @@ async function updateStatus(orderId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/order/${orderId}/status`,
+                `https://bakerybackend-7vre.onrender.com/api/order/${orderId}/status`,
                 {
                     method: "PUT",
 
@@ -955,8 +955,8 @@ if (saveProductBtn) {
 
                 const url =
                     editingProductId
-                        ? `http://localhost:5000/api/product/${editingProductId}`
-                        : "http://localhost:5000/api/product/add";
+                        ? `https://bakerybackend-7vre.onrender.com/api/product/${editingProductId}`
+                        : "https://bakerybackend-7vre.onrender.com/api/product/add";
 
 
                 const method =
@@ -1061,7 +1061,7 @@ async function loadProducts() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/product"
+                "https://bakerybackend-7vre.onrender.com/api/product"
             );
 
         const products =
@@ -1085,7 +1085,7 @@ async function loadProducts() {
                 product.image &&
                 product.image.startsWith("http")
                     ? product.image
-                    : "http://localhost:5000" +
+                    : "https://bakerybackend-7vre.onrender.com" +
                       (product.image || "");
 
 
@@ -1182,7 +1182,7 @@ async function deleteProduct(productId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/product/${productId}`,
+                `https://bakerybackend-7vre.onrender.com/api/product/${productId}`,
                 {
                     method: "DELETE"
                 }
@@ -1235,7 +1235,7 @@ async function editProduct(productId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/product/${productId}`
+                `https://bakerybackend-7vre.onrender.com/api/product/${productId}`
             );
 
 
@@ -1312,7 +1312,7 @@ async function editProduct(productId) {
             imagePreview.src =
                 product.image.startsWith("http")
                     ? product.image
-                    : "http://localhost:5000" +
+                    : "https://bakerybackend-7vre.onrender.com" +
                       product.image;
 
             imagePreview.style.display =
@@ -1532,7 +1532,7 @@ async function loadCustomers() {
 
         const customerResponse =
             await fetch(
-                "http://localhost:5000/api/user"
+                "https://bakerybackend-7vre.onrender.com/api/user"
             );
 
 
@@ -2023,7 +2023,7 @@ async function updateCustomerOrderStatus(orderId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/order/${orderId}/status`,
+                `https://bakerybackend-7vre.onrender.com/api/order/${orderId}/status`,
                 {
                     method: "PUT",
 
@@ -2098,7 +2098,7 @@ async function deleteCustomer(customerId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/user/${customerId}`,
+                `https://bakerybackend-7vre.onrender.com/api/user/${customerId}`,
                 {
                     method: "DELETE"
                 }
@@ -2171,7 +2171,7 @@ async function loadMessages() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/message"
+                "https://bakerybackend-7vre.onrender.com/api/message"
             );
 
 
@@ -2346,7 +2346,7 @@ async function deleteMessage(messageId) {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/message/${messageId}`,
+                `https://bakerybackend-7vre.onrender.com/api/message/${messageId}`,
                 {
                     method: "DELETE"
                 }

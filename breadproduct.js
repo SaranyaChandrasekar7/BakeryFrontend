@@ -16,7 +16,7 @@ async function loadBreadProduct() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/product"
+                "https://bakerybackend-7vre.onrender.com/api/product"
             );
 
         const products =
@@ -65,7 +65,7 @@ async function loadBreadProduct() {
         ).src =
             product.image.startsWith("http")
                 ? product.image
-                : "http://localhost:5000" +
+                : "https://bakerybackend-7vre.onrender.com" +
                   product.image;
 
 
@@ -239,7 +239,7 @@ async function loadBreadProduct() {
                 image:
                     product.image.startsWith("http")
                         ? product.image
-                        : "http://localhost:5000" +
+                        : "https://bakerybackend-7vre.onrender.com" +
                           product.image,
 
 

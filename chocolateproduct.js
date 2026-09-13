@@ -13,7 +13,7 @@ async function loadChocolateProduct() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/product");
+        const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
         const products = await response.json();
 
         const product = products.find(item => {
@@ -51,7 +51,7 @@ async function loadChocolateProduct() {
       document.querySelector(".cake-product-image img").src =
     product.image.startsWith("http")
         ? product.image
-        : "http://localhost:5000" + product.image;
+        : "https://bakerybackend-7vre.onrender.com" + product.image;
 
 document.querySelector(".cake-product-image img").alt =
     product.name;
@@ -170,7 +170,7 @@ if (!Array.isArray(cart)) {
                 name: product.name,
 
                 image:
-    "http://localhost:5000" + product.image,
+    "https://bakerybackend-7vre.onrender.com" + product.image,
 
                 weight: currentWeight,
 

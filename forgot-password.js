@@ -60,7 +60,7 @@ forgotPasswordForm.addEventListener("submit", async function (event) {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/user/forgot-password",
+            "https://bakerybackend-7vre.onrender.com/api/user/forgot-password",
             {
                 method: "PUT",
 

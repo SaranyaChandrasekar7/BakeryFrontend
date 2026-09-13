@@ -5,7 +5,7 @@ console.log("Chocolate JS loaded");
 async function loadChocolate() {
     try {
 
-        const response = await fetch("http://localhost:5000/api/product");
+        const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
         const products = await response.json();
 
         const chocolates = products.filter(
@@ -25,7 +25,7 @@ async function loadChocolate() {
             chocolateContainer.innerHTML += `
                 <div class="chocolate-card">
 
-                    <img src="http://localhost:5000${product.image}" 
+                    <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
      alt="${product.name}">
 
                     <h2>${product.name}</h2>

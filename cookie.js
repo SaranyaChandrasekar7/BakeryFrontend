@@ -17,7 +17,7 @@ async function loadCookie() {
     try {
 
         const response =
-            await fetch("http://localhost:5000/api/product");
+            await fetch("https://bakerybackend-7vre.onrender.com/api/product");
 
         const products = await response.json();
 
@@ -55,7 +55,7 @@ async function loadCookie() {
 
                 <div class="cookies-card">
 
-                    <img src="http://localhost:5000${product.image}" 
+                    <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
      alt="${product.name}">
 
                     <h2>

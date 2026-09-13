@@ -316,7 +316,7 @@ const user =
 
                 const response =
                     await fetch(
-                        "http://localhost:5000/api/order",
+                        "https://bakerybackend-7vre.onrender.com/api/order",
                         {
 
                             method:

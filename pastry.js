@@ -6,7 +6,7 @@ async function loadPastry() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/product");
+        const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
         const products = await response.json();
 
         const pastries = products.filter(
@@ -26,7 +26,7 @@ async function loadPastry() {
             pastryContainer.innerHTML += `
                 <div class="pastry-card">
 
-                    <img src="http://localhost:5000${product.image}" 
+                    <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
      alt="${product.name}">
 
                     <h2>${product.name}</h2>
