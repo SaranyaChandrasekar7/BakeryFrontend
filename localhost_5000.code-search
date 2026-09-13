@@ -1,0 +1,91 @@
+# Query: localhost:5000
+
+50 results - 19 files
+
+BakeryFrontend\admin-login.js:
+  23:                 "https://bakerybackend-7vre.onrender.com/api/admin/login",
+
+BakeryFrontend\admin.js:
+    25:             await fetch("https://bakerybackend-7vre.onrender.com/api/order");
+   340:                 `https://bakerybackend-7vre.onrender.com/api/order/${orderId}/status`,
+   958:                         ? `https://bakerybackend-7vre.onrender.com/api/product/${editingProductId}`
+   959:                         : "https://bakerybackend-7vre.onrender.com/api/product/add";
+  1064:                 "https://bakerybackend-7vre.onrender.com/api/product"
+  1088:                     : "https://bakerybackend-7vre.onrender.com" +
+  1185:                 `https://bakerybackend-7vre.onrender.com/api/product/${productId}`,
+  1238:                 `https://bakerybackend-7vre.onrender.com/api/product/${productId}`
+  1315:                     : "https://bakerybackend-7vre.onrender.com" +
+  1535:                 "https://bakerybackend-7vre.onrender.com/api/user"
+  2026:                 `https://bakerybackend-7vre.onrender.com/api/order/${orderId}/status`,
+  2101:                 `https://bakerybackend-7vre.onrender.com/api/user/${customerId}`,
+  2174:                 "https://bakerybackend-7vre.onrender.com/api/message"
+  2349:                 `https://bakerybackend-7vre.onrender.com/api/message/${messageId}`,
+
+BakeryFrontend\bread.js:
+  17:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  38:                      <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\breadproduct.js:
+   19:                 "https://bakerybackend-7vre.onrender.com/api/product"
+   68:                 : "https://bakerybackend-7vre.onrender.com" +
+  242:                         : "https://bakerybackend-7vre.onrender.com" +
+
+BakeryFrontend\cake.js:
+   8:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  28:                      <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\cakeproduct.js:
+   19:                 "https://bakerybackend-7vre.onrender.com/api/product"
+   68:                 : "https://bakerybackend-7vre.onrender.com" +
+  245:                         : "https://bakerybackend-7vre.onrender.com" +
+
+BakeryFrontend\chocolate.js:
+   8:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  28:                     <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\chocolateproduct.js:
+   16:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+   54:         : "https://bakerybackend-7vre.onrender.com" + product.image;
+  173:     "https://bakerybackend-7vre.onrender.com" + product.image,
+
+BakeryFrontend\cookie.js:
+  20:             await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  58:                     <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\cookiesproduct.js:
+   19:                 "https://bakerybackend-7vre.onrender.com/api/product"
+   68:                 : "https://bakerybackend-7vre.onrender.com" +
+  242:                         : "https://bakerybackend-7vre.onrender.com" +
+
+BakeryFrontend\cupcake.js:
+   9:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  34:                      <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\cupcakeproduct.js:
+   19:                 "https://bakerybackend-7vre.onrender.com/api/product"
+   76:                 : "https://bakerybackend-7vre.onrender.com" +
+  251:                         : "https://bakerybackend-7vre.onrender.com" +
+
+BakeryFrontend\forgot-password.js:
+  63:             "https://bakerybackend-7vre.onrender.com/api/user/forgot-password",
+
+BakeryFrontend\login.js:
+  42:             "https://bakerybackend-7vre.onrender.com/api/user/login",
+
+BakeryFrontend\order.js:
+  319:                         "https://bakerybackend-7vre.onrender.com/api/order",
+
+BakeryFrontend\pastry.js:
+   9:         const response = await fetch("https://bakerybackend-7vre.onrender.com/api/product");
+  29:                     <img src="https://bakerybackend-7vre.onrender.com${product.image}" 
+
+BakeryFrontend\pastryproduct.js:
+   19:                 "https://bakerybackend-7vre.onrender.com/api/product"
+   68:                 : "https://bakerybackend-7vre.onrender.com" +
+  243:                         : "https://bakerybackend-7vre.onrender.com" +
+
+BakeryFrontend\script.js:
+  27:                 "https://bakerybackend-7vre.onrender.com/api/message",
+
+BakeryFrontend\trackorder.html:
+  790:             `https://bakerybackend-7vre.onrender.com/api/order/customer/${customerId}`
