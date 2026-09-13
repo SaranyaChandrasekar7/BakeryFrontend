@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+
+    <div id="pageLoader">
+
+        <div class="loader-content">
+
+            <div class="loader-cake">🍰</div>
+
+            <div class="loader-text">
+                Loading delicious treats...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Your Navbar -->
+
+  
+   <!-- Navbar -->
+
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">🔍</button>
+
+        <div
+            id="searchResults"
+            class="search-results">
+        </div>
+
+    </div>
+
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <!-- Login / Signup -->
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a href="cart.html" class="cart-link">
+        🛒
+    </a>
+
+</nav>
+
+
+    <!-- Products Page -->
+
+    <section class="products-page">
+
+        <div class="products-overlay">
+
+            <p class="small-title">OUR PRODUCTS</p>
+
+            <h1>Choose Your Favourite</h1>
+
+
+            <div class="product-categories">
+
+                <div class="product-category">
+                    <img src="./Bakery Images/cake.jpeg" alt="Cakes">
+                    <a href="cake.html">CAKES</a>
+                </div>
+
+                <div class="product-category">
+                    <img src="./Bakery Images/pastries.jpg" alt="Pastries">
+                    <a href="pastry.html">PASTRIES</a>
+                </div>
+
+                <div class="product-category">
+                    <img src="./Bakery Images/cupcake.jpg" alt="Cup Cakes">
+                    <a href="cupcake.html">CUP CAKES</a>
+                </div>
+
+                <div class="product-category">
+                    <img src="./Bakery Images/Bread.jpeg" alt="Bread">
+                    <a href="bread.html">BREAD</a>
+                </div>
+
+                <div class="product-category">
+                    <img src="./Bakery Images/Chocolate.jpeg" alt="Chocolates">
+                    <a href="chocolate.html">CHOCOLATES</a>
+                </div>
+
+                <div class="product-category">
+                    <img src="./Bakery Images/cookies.jpeg" alt="Cookies">
+                    <a href="cookies.html">COOKIES</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+ <script src="search.js"></script>
+
+ <script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+
+        navMenu.classList.toggle("active");
+
+    });
+
+
+    /* Mobile Search */
+
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.getElementById("searchBtn");
+
+    searchBtn.addEventListener("click", function () {
+
+        if (window.innerWidth <= 767) {
+
+            searchBox.classList.toggle("active");
+
+            if (searchBox.classList.contains("active")) {
+
+                document.getElementById("searchInput").focus();
+
+            }
+
+        }
+
+    });
+
+</script>
+
+<script src="search.js"></script>
+<script src="auth.js"></script>
+<script src="loader.js"></script>
+</body>
+
+</html>

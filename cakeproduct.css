@@ -1,0 +1,364 @@
+/* Cake Product Page */
+
+.cake-product {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    padding: 120px 8% 70px;
+
+    background-color: #fffaf5;
+
+}
+
+
+/* Image */
+
+/* Image */
+
+.cake-product-image {
+    width: 300px;
+    height: 300px;
+
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+.cake-product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.cake-product-image img:hover {
+    transform: scale(1.08);
+}
+
+
+/* Content */
+
+.cake-product-content {
+
+    max-width: 520px;
+
+}
+
+
+/* Small Title */
+
+.cake-product-content .small-title {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Heading */
+
+.cake-product-content h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 45px;
+
+    font-style: italic;
+
+    color: #6b2f1d;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Description */
+
+.product-description {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Select Size */
+
+.select-title {
+
+    color: #6b2f1d;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Weight Buttons */
+
+.weight-options {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.weight-btn {
+
+    min-width: 100px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #e6b566;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    color: #6b2f1d;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.weight-btn span {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+}
+
+
+.weight-btn:hover {
+
+    background-color: #fff0d5;
+
+}
+
+
+/* Selected Size */
+
+.weight-btn.active {
+
+    background-color: #e99a00;
+
+    color: white;
+
+}
+
+
+.weight-btn.active span {
+
+    color: white;
+
+}
+
+
+/* Price */
+
+.selected-price {
+
+    margin-top: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #6b2f1d;
+
+}
+
+
+#selectedPrice {
+
+    color: #e99a00;
+
+}
+
+
+/* Buttons */
+
+.product-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+
+.product-buttons button {
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.product-buttons button:hover {
+
+    background-color: #6b2f1d;
+
+    transform: translateY(-2px);
+
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width:1023px){
+
+.cake-product{
+    gap:40px;
+    padding:100px 30px 60px;
+}
+
+.cake-product-image{
+    width:260px;
+    height:260px;
+}
+
+.cake-product-content h1{
+    font-size:36px;
+}
+
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width:767px){
+
+.cake-product{
+    flex-direction:column;
+    text-align:center;
+    gap:30px;
+    padding:80px 20px 40px;
+}
+
+.cake-product-image{
+    width:240px;
+    height:240px;
+}
+
+.cake-product-content{
+    max-width:100%;
+}
+
+.cake-product-content .small-title{
+    font-size:20px;
+}
+
+.cake-product-content h1{
+    font-size:28px;
+}
+
+.product-description{
+    font-size:14px;
+}
+
+.weight-options{
+    justify-content:center;
+}
+
+.weight-btn{
+    min-width:110px;
+}
+
+.selected-price{
+    font-size:18px;
+}
+
+.product-buttons{
+    flex-direction:column;
+}
+
+.product-buttons button{
+    width:100%;
+}
+
+}
+
+/* =================================
+   iPhone SE
+================================= */
+
+@media (max-width:375px){
+
+.cake-product-image{
+    width:200px;
+    height:200px;
+}
+
+.cake-product-content h1{
+    font-size:24px;
+}
+
+.weight-btn{
+    min-width:95px;
+    font-size:12px;
+}
+
+}
+

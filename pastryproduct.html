@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BakeryShop - Pastry Product</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="cakeproduct.css">
+
+</head>
+
+
+<body>
+
+    <!-- PAGE LOADER -->
+
+    <div id="pageLoader">
+
+        <div class="loader-content">
+
+            <div class="loader-cake">🍰</div>
+
+            <div class="loader-text">
+                Loading delicious treats...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Your Navbar -->
+
+
+
+<!-- Navbar -->
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Logo -->
+    <h1>Bakery<span>Shop</span></h1>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="auth-links">
+            <a href="login.html">Login</a>
+            <span>|</span>
+            <a href="signup.html">Sign Up</a>
+        </div>
+
+    </div>
+
+    <!-- Cart -->
+    <a href="cart.html" class="cart-link">🛒</a>
+
+</nav>
+
+<!-- Pastry Product -->
+
+<section class="cake-product">
+
+
+    <!-- Product Image -->
+
+    <div class="cake-product-image">
+
+        <img
+            id="productImage"
+            src="./Bakery Images/chocolatecroissant.jpeg"
+            alt="Chocolate Croissant"
+        >
+
+    </div>
+
+
+
+    <!-- Product Content -->
+
+    <div class="cake-product-content">
+
+
+        <!-- Category -->
+
+        <p
+            class="small-title"
+            id="productCategory"
+        >
+            PASTRY
+        </p>
+
+
+
+        <!-- Product Name -->
+
+        <h1 id="productName">
+
+            Chocolate Croissant
+
+        </h1>
+
+
+
+        <!-- Description -->
+
+        <p
+            class="product-description"
+            id="productDescription"
+        >
+
+            Buttery flaky croissant filled with rich chocolate.
+            Freshly baked with a crispy outside and soft inside.
+
+        </p>
+
+
+
+        <!-- Size / Quantity -->
+
+        <h3 class="select-title">
+
+            Select Quantity
+
+        </h3>
+
+
+
+        <!-- Dynamic Quantity Options -->
+
+        <div
+            class="weight-options"
+            id="weightOptions"
+        >
+
+            <!-- JavaScript will add quantity buttons here -->
+
+        </div>
+
+
+
+        <!-- Selected Price -->
+
+        <div class="selected-price">
+
+            Price:
+
+              <span id="selectedPrice"></span>
+
+        </div>
+
+
+
+        <!-- Buttons -->
+
+        <div class="product-buttons">
+
+
+            <button id="addToCart">
+
+                ADD TO CART
+
+            </button>
+
+
+
+            <button id="orderNow">
+
+                ORDER NOW →
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- JavaScript -->
+
+<script src="pastryproduct.js"></script>
+<script src="search.js"></script>
+
+<script src="auth.js"></script>
+<script src="loader.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+
+</html>

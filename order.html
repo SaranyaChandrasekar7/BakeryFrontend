@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="order.css">
+
+</head>
+
+
+<body>
+
+
+   <!-- Navbar -->
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Logo -->
+    <h1>Bakery<span>Shop</span></h1>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="auth-links">
+            <a href="login.html">Login</a>
+            <span>|</span>
+            <a href="signup.html">Sign Up</a>
+        </div>
+
+    </div>
+
+    <!-- Cart -->
+    <a href="cart.html" class="cart-link">🛒</a>
+
+</nav>
+
+
+
+    <!-- Order Page -->
+
+    <section class="order-page">
+
+        <div class="order-container">
+
+
+            <!-- Heading -->
+
+            <p class="small-title">
+                CHECKOUT
+            </p>
+
+
+            <h1>
+                Complete Your Order
+            </h1>
+
+
+
+            <!-- Order Layout -->
+
+            <div class="order-layout">
+
+
+                <!-- Customer Details -->
+
+                <div class="customer-box">
+
+                    <h2>
+                        Customer Details
+                    </h2>
+
+
+                    <form id="orderForm">
+
+
+                        <!-- Name -->
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                Full Name
+                            </label>
+
+                            <input type="text" id="customerName" placeholder="Enter your name" required>
+
+                        </div>
+
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+                        </div>
+
+
+
+                        <!-- Address -->
+
+                        <div class="form-group">
+
+                            <label for="address">
+                                Delivery Address
+                            </label>
+
+                            <textarea id="address" placeholder="Enter your full address" rows="4" required></textarea>
+
+                        </div>
+
+
+
+                        <!-- City -->
+
+                        <div class="form-group">
+
+                            <label for="city">
+                                City
+                            </label>
+
+                            <input type="text" id="city" placeholder="Enter your city" required>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- Order Summary -->
+
+                <div class="order-summary">
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+
+                    <!-- Products will display here -->
+
+                    <div id="orderItems">
+
+                        <!-- JavaScript -->
+
+                    </div>
+
+
+
+                    <!-- Total Quantity -->
+
+                    <div class="order-total-row">
+
+                        <span>
+                            Total Quantity
+                        </span>
+
+                        <strong id="orderQuantity">
+                            0
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Total Price -->
+
+                    <div class="order-total-row">
+
+                        <span>
+                            Total Value
+                        </span>
+
+                        <strong id="orderTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Payment -->
+
+                    <div class="payment-box">
+
+                        <h3>
+                            Payment Method
+                        </h3>
+
+
+                        <label>
+
+                            <input type="radio" name="payment" value="cod" checked>
+
+                            Cash on Delivery
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Place Order -->
+
+                    <button type="submit" form="orderForm" id="placeOrder">
+
+                        PLACE ORDER →
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <script src="order.js"></script>
+<script src="search.js"></script>
+
+<script src="auth.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+
+</html>

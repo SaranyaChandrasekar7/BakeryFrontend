@@ -1,0 +1,355 @@
+ /* Order Success Page */
+
+.success-page {
+
+    min-height: 100vh;
+
+    background-color: #fffaf5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 120px 20px 70px;
+
+}
+
+
+.success-box {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background-color: white;
+
+    padding: 60px 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px
+        rgba(107, 47, 29, 0.10);
+
+}
+
+
+/* Success Icon */
+
+.success-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 38px;
+
+    font-weight: bold;
+
+}
+
+
+/* Small Title */
+
+.success-box .small-title {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* Heading */
+
+.success-box h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 42px;
+
+    font-style: italic;
+
+    color: #6b2f1d;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Text */
+
+.success-text {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* Button */
+
+.success-box button {
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.success-box button:hover {
+
+    background-color: #6b2f1d;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - ORDER SUCCESS PAGE
+   ========================================= */
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+
+    .success-page {
+        padding: 110px 30px 60px;
+    }
+
+    .success-box {
+        max-width: 600px;
+        padding: 50px 35px;
+    }
+
+    .success-box h1 {
+        font-size: 36px;
+    }
+
+    .success-text {
+        font-size: 15px;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .success-page {
+
+        min-height: 100vh;
+
+        padding: 100px 15px 50px;
+
+        box-sizing: border-box;
+
+    }
+
+
+    .success-box {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 40px 20px;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+
+    }
+
+
+    /* Success Icon */
+
+    .success-icon {
+
+        width: 65px;
+
+        height: 65px;
+
+        margin-bottom: 20px;
+
+        font-size: 32px;
+
+    }
+
+
+    /* Small Title */
+
+    .success-box .small-title {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    /* Heading */
+
+    .success-box h1 {
+
+        font-size: 29px;
+
+        line-height: 1.25;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* Success Text */
+
+    .success-text {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    /* Button */
+
+    .success-box button {
+
+        width: 100%;
+
+        padding: 13px 18px;
+
+        font-size: 11px;
+
+        border-radius: 23px;
+
+    }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 400px) {
+
+    .success-page {
+
+        padding: 95px 10px 45px;
+
+    }
+
+
+    .success-box {
+
+        padding: 35px 15px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .success-icon {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 28px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .success-box .small-title {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .success-box h1 {
+
+        font-size: 25px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .success-text {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .success-box button {
+
+        padding: 12px 15px;
+
+        font-size: 10px;
+
+    }
+
+}

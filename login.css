@@ -1,0 +1,475 @@
+/* =========================================
+   LOGIN PAGE
+   ========================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    background-color: #fffaf5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 120px 20px 70px;
+
+}
+
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+/* Small Title */
+
+.login-container .small-title {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Heading */
+
+.login-container h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 42px;
+
+    font-style: italic;
+
+    color: #6b2f1d;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* Subtitle */
+
+.login-subtitle {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* Login Box */
+
+.login-box {
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(107, 47, 29, 0.10);
+
+    text-align: left;
+
+}
+
+
+/* Form Group */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Label */
+
+.form-group label {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    color: #6b2f1d;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* Input */
+
+.form-group input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #e6d5c7;
+
+    border-radius: 10px;
+
+    background-color: #fffaf5;
+
+    color: #6b2f1d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.3s;
+
+}
+
+
+/* Input Focus */
+
+.form-group input:focus {
+
+    border-color: #e99a00;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(233, 154, 0, 0.10);
+
+}
+
+
+/* Login Options */
+
+.login-options {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+/* Remember */
+
+.login-options label {
+
+    color: #6b625d;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+
+/* Checkbox */
+
+.login-options input {
+
+    accent-color: #e99a00;
+
+}
+
+
+/* Forgot Password */
+
+.login-options a {
+
+    color: #e99a00;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+.login-options a:hover {
+
+    color: #6b2f1d;
+
+}
+
+
+/* Login Button */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.login-btn:hover {
+
+    background-color: #6b2f1d;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Sign Up Text */
+
+.signup-text {
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 14px;
+
+    margin-top: 25px;
+
+}
+
+
+.signup-text a {
+
+    color: #e99a00;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.signup-text a:hover {
+
+    color: #6b2f1d;
+
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .login-page {
+
+        padding: 110px 30px 60px;
+
+    }
+
+    .login-container h1 {
+
+        font-size: 36px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .login-page {
+
+        padding: 100px 15px 50px;
+
+    }
+
+
+    .login-container .small-title {
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .login-container h1 {
+
+        font-size: 29px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .login-subtitle {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .login-box {
+
+        padding: 22px 18px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .form-group {
+
+        margin-bottom: 17px;
+
+    }
+
+
+    .form-group label {
+
+        font-size: 13px;
+
+    }
+
+
+    .form-group input {
+
+        padding: 12px 13px;
+
+        font-size: 13px;
+
+    }
+
+
+    .login-options {
+
+        font-size: 12px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .login-btn {
+
+        padding: 13px 15px;
+
+    }
+
+
+    .signup-text {
+
+        font-size: 13px;
+
+        margin-top: 20px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .login-page {
+
+        padding: 95px 10px 45px;
+
+    }
+
+
+    .login-container h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .login-box {
+
+        padding: 20px 14px;
+
+    }
+
+
+    .login-options {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .form-group input {
+
+        font-size: 12px;
+
+    }
+
+}

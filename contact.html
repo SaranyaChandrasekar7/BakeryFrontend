@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">🔍</button>
+
+        <div
+            id="searchResults"
+            class="search-results">
+        </div>
+
+    </div>
+
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <!-- Login / Signup -->
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a href="cart.html" class="cart-link">
+        🛒
+    </a>
+
+</nav>
+
+
+    <!-- Contact Us -->
+<section class="contact-page">
+
+    <div class="contact-page-content">
+
+        <p class="small-title">CONTACT US</p>
+
+        <h1>We'd Love To Hear From You</h1>
+
+        <p class="contact-intro">
+            Have a question, want to place an order, or looking for
+            something special? Get in touch with BakeryShop.
+        </p>
+
+        <div class="contact-info">
+
+            <p>📍 Chennai, Tamil Nadu</p>
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ bakeryshop@gmail.com</p>
+            <p>🕒 Mon - Sun : 9:00 AM - 9:00 PM</p>
+
+        </div>
+
+        <!-- Contact Form -->
+       <form class="contact-form" id="contactForm">
+
+    <input type="text" id="name" placeholder="Your Name">
+
+    <input type="email" id="email" placeholder="Your Email">
+
+    <input type="text" id="phone" placeholder="Your Phone">
+
+    <textarea id="message" placeholder="Your Message"></textarea>
+
+    <button type="submit">SEND MESSAGE →</button>
+
+</form>
+
+</section>
+
+<script src="script.js"></script>
+
+<script src="search.js"></script>
+
+<script src="auth.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+
+</html>

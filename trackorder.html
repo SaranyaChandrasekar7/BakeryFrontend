@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Track Orders - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================
+           PAGE
+        ========================================= */
+
+        .track-page {
+            min-height: 80vh;
+            padding: 30px 15px;
+            background: #fff8f0;
+        }
+
+        .track-box {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .track-title {
+            text-align: center;
+            color: #6b3e26;
+            margin-bottom: 25px;
+        }
+
+        .track-title p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           ORDER CARD
+        ========================================= */
+
+        .order-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           ORDER TOP
+        ========================================= */
+
+        .order-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 18px;
+            background: #fafafa;
+            border-bottom: 1px solid #ddd;
+            gap: 15px;
+        }
+
+        .order-id-area {
+            flex: 1;
+        }
+
+        .order-id-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .order-id {
+            font-size: 13px;
+            color: #444;
+            word-break: break-all;
+        }
+
+        .order-total-area {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .order-total-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .order-total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #6b3e26;
+        }
+
+
+        /* =========================================
+           STATUS
+        ========================================= */
+
+        .status-area {
+            padding: 15px 18px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-heading {
+            font-weight: bold;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .order-status {
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-confirmed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-preparing {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-delivery {
+            background: #e2d9f3;
+            color: #4b2e83;
+        }
+
+        .status-delivered {
+            background: #c3e6cb;
+            color: #155724;
+        }
+
+
+        /* =========================================
+           MESSAGE
+        ========================================= */
+
+        .status-message {
+            margin-top: 12px;
+            padding: 10px 12px;
+            background: #fff8f0;
+            border-radius: 7px;
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .status-message strong {
+            color: #6b3e26;
+        }
+
+
+        /* =========================================
+           TIMELINE
+        ========================================= */
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 25px 5px 5px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            height: 3px;
+            width: 0%;
+            background: #6b3e26;
+            z-index: 2;
+            transition: width 0.6s ease;
+        }
+
+        .timeline-step {
+            width: 20%;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .timeline-circle {
+            width: 30px;
+            height: 30px;
+            margin: auto;
+            border-radius: 50%;
+            background: #eee;
+            border: 3px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .timeline-step.active .timeline-circle {
+            background: #6b3e26;
+            border-color: #6b3e26;
+            color: white;
+        }
+
+        .timeline-step.current .timeline-circle {
+            animation: pulseStatus 1.5s infinite;
+        }
+
+        @keyframes pulseStatus {
+
+            0% {
+                box-shadow:
+                    0 0 0 0 rgba(107,62,38,0.4);
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 9px rgba(107,62,38,0);
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0 rgba(107,62,38,0);
+            }
+
+        }
+
+        .timeline-label {
+            margin-top: 7px;
+            font-size: 10px;
+            color: #888;
+            line-height: 1.2;
+        }
+
+        .timeline-step.active .timeline-label {
+            color: #6b3e26;
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           ORDERED PRODUCTS
+        ========================================= */
+
+        .products-area {
+            padding: 15px 18px;
+        }
+
+        .products-title {
+            color: #6b3e26;
+            font-size: 17px;
+            margin: 0 0 8px;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 0;
+            border-top: 1px solid #eee;
+            gap: 15px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .product-details {
+            margin-top: 4px;
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 14px;
+            font-weight: bold;
+            color: #6b3e26;
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           SUMMARY
+        ========================================= */
+
+        .summary-area {
+            border-top: 1px solid #ddd;
+            padding: 13px 18px;
+            background: #fafafa;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid #ddd;
+            margin-top: 7px;
+            padding-top: 9px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #6b3e26;
+        }
+
+
+        /* =========================================
+           NO ORDERS
+        ========================================= */
+
+        .no-orders {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .no-orders h2 {
+            color: #6b3e26;
+        }
+
+        .no-orders p {
+            color: #777;
+        }
+
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .back-btn {
+            display: block;
+            margin: 25px auto;
+            padding: 11px 22px;
+            border: none;
+            border-radius: 7px;
+            background: #6b3e26;
+            color: white;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #4e2d1d;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .track-page {
+                padding: 20px 8px;
+            }
+
+            .order-top {
+                padding: 12px;
+            }
+
+            .status-area {
+                padding: 12px;
+            }
+
+            .products-area {
+                padding: 12px;
+            }
+
+            .summary-area {
+                padding: 12px;
+            }
+
+            .order-id {
+                font-size: 11px;
+            }
+
+            .order-total {
+                font-size: 16px;
+            }
+
+            .timeline {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .timeline-circle {
+                width: 27px;
+                height: 27px;
+                font-size: 11px;
+            }
+
+            .timeline::before {
+                top: 13px;
+            }
+
+            .timeline-progress {
+                top: 13px;
+            }
+
+            .timeline-label {
+                font-size: 8px;
+            }
+
+            .product-name {
+                font-size: 13px;
+            }
+
+            .product-details {
+                font-size: 11px;
+            }
+
+            .product-price {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<nav class="navbar">
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+    >
+        ☰
+    </button>
+
+
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">
+            🔍
+        </button>
+
+        <div
+            id="searchResults"
+            class="search-results"
+        ></div>
+
+    </div>
+
+
+    <div
+        class="nav-menu"
+        id="navMenu"
+    >
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="trackorder.html">
+                    Track Order
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="cart.html"
+        class="cart-link"
+    >
+        🛒
+    </a>
+
+</nav>
+
+
+
+<!-- =========================================
+     TRACK PAGE
+========================================= -->
+
+<section class="track-page">
+
+    <div class="track-box">
+
+
+        <div class="track-title">
+
+            <h1>
+                Track Your Orders
+            </h1>
+
+            <p>
+                View your orders and their current status.
+            </p>
+
+        </div>
+
+
+        <p
+            id="errorMessage"
+            style="text-align:center;color:#b00020;"
+        ></p>
+
+
+        <!-- ALL ORDERS -->
+
+        <div id="allOrders">
+            Loading your orders...
+        </div>
+
+
+        <button
+            type="button"
+            class="back-btn"
+            onclick="window.location.href='products.html'"
+        >
+            CONTINUE SHOPPING
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<script src="search.js"></script>
+
+<script src="auth.js"></script>
+
+
+
+<!-- =========================================
+     MENU
+========================================= -->
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+menuToggle.addEventListener(
+    "click",
+    function() {
+
+        navMenu.classList.toggle(
+            "active"
+        );
+
+    }
+);
+
+</script>
+
+
+
+<!-- =========================================
+     TRACK ORDER
+========================================= -->
+
+<script>
+
+
+const currentLoggedInUser =
+    localStorage.getItem(
+        "loggedInUser"
+    );
+
+
+const allOrdersContainer =
+    document.getElementById(
+        "allOrders"
+    );
+
+
+const errorMessage =
+    document.getElementById(
+        "errorMessage"
+    );
+
+
+// =========================================
+// LOGIN CHECK
+// =========================================
+
+if (!currentLoggedInUser) {
+
+    allOrdersContainer.innerHTML = `
+
+        <div class="no-orders">
+
+            <h2>
+                Please Login
+            </h2>
+
+            <p>
+                Please login to view your orders.
+            </p>
+
+        </div>
+
+    `;
+
+}
+
+
+// =========================================
+// USER LOGGED IN
+// =========================================
+
+else {
+
+
+    let user;
+
+
+    try {
+
+        user =
+            JSON.parse(
+                currentLoggedInUser
+            );
+
+    }
+
+    catch (error) {
+
+        allOrdersContainer.innerHTML = `
+
+            <div class="no-orders">
+
+                <h2>
+                    Login Error
+                </h2>
+
+                <p>
+                    Please login again.
+                </p>
+
+            </div>
+
+        `;
+
+        throw error;
+
+    }
+
+
+    const customerId =
+        user._id;
+
+
+    // =========================================
+    // CUSTOMER ID CHECK
+    // =========================================
+
+    if (!customerId) {
+
+        allOrdersContainer.innerHTML = `
+
+            <div class="no-orders">
+
+                <h2>
+                    Customer ID Not Found
+                </h2>
+
+                <p>
+                    Please login again.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    // =========================================
+    // FETCH ALL ORDERS
+    // =========================================
+
+    else {
+
+
+        fetch(
+            `http://localhost:5000/api/order/customer/${customerId}`
+        )
+
+
+        .then(
+            function(response) {
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Failed to fetch orders"
+                    );
+
+                }
+
+                return response.json();
+
+            }
+        )
+
+
+        .then(
+            function(orders) {
+
+
+                // =================================
+                // NO ORDERS
+                // =================================
+
+                if (
+                    !Array.isArray(orders) ||
+                    orders.length === 0
+                ) {
+
+                    allOrdersContainer.innerHTML = `
+
+                        <div class="no-orders">
+
+                            <h2>
+                                No Orders Yet
+                            </h2>
+
+                            <p>
+                                You have not placed any orders yet.
+                            </p>
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                // CLEAR
+
+                allOrdersContainer.innerHTML = "";
+
+
+                // =================================
+                // STATUS STEPS
+                // =================================
+
+                const statusSteps = [
+
+                    "Pending",
+                    "Confirmed",
+                    "Preparing",
+                    "Out for Delivery",
+                    "Delivered"
+
+                ];
+
+
+                // =================================
+                // ALL ORDERS LOOP
+                // =================================
+
+                orders.forEach(
+                    function(order) {
+
+
+                        const status =
+                            order.status ||
+                            "Pending";
+
+
+                        const currentIndex =
+                            statusSteps.indexOf(
+                                status
+                            );
+
+
+                        // =================================
+                        // STATUS CLASS
+                        // =================================
+
+                        let statusClass =
+                            "status-pending";
+
+
+                        if (
+                            status ===
+                            "Confirmed"
+                        ) {
+
+                            statusClass =
+                                "status-confirmed";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Preparing"
+                        ) {
+
+                            statusClass =
+                                "status-preparing";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Out for Delivery"
+                        ) {
+
+                            statusClass =
+                                "status-delivery";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Delivered"
+                        ) {
+
+                            statusClass =
+                                "status-delivered";
+
+                        }
+
+
+                        // =================================
+                        // STATUS MESSAGE
+                        // =================================
+
+                        let messageTitle = "";
+
+                        let messageText = "";
+
+
+                        if (
+                            status ===
+                            "Pending"
+                        ) {
+
+                            messageTitle =
+                                "Your order has been placed successfully! 🎉";
+
+                            messageText =
+                                "We have received your order and will start preparing it soon.";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Confirmed"
+                        ) {
+
+                            messageTitle =
+                                "Your order has been confirmed! ✅";
+
+                            messageText =
+                                "We have confirmed your order and will prepare it shortly.";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Preparing"
+                        ) {
+
+                            messageTitle =
+                                "Your order is being prepared! 👨‍🍳";
+
+                            messageText =
+                                "Our bakery team is preparing your delicious order.";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Out for Delivery"
+                        ) {
+
+                            messageTitle =
+                                "Your order is out for delivery! 🚚";
+
+                            messageText =
+                                "Your delicious order is on the way to you.";
+
+                        }
+
+                        else if (
+                            status ===
+                            "Delivered"
+                        ) {
+
+                            messageTitle =
+                                "Your order has been delivered successfully! 🎉";
+
+                            messageText =
+                                "Thank you for ordering from BakeryShop ❤️";
+
+                        }
+
+
+                        // =================================
+                        // CREATE CARD
+                        // =================================
+
+                        const orderCard =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        orderCard.className =
+                            "order-card";
+
+
+                        // =================================
+                        // ORDER TOP + STATUS
+                        // =================================
+
+                        orderCard.innerHTML = `
+
+                            <div class="order-top">
+
+                                <div class="order-id-area">
+
+                                    <div class="order-id-label">
+                                        ORDER ID
+                                    </div>
+
+                                    <div class="order-id">
+                                        ${order._id}
+                                    </div>
+
+                                </div>
+
+
+                                <div class="order-total-area">
+
+                                    <div class="order-total-label">
+                                        TOTAL
+                                    </div>
+
+                                    <div class="order-total">
+                                        ₹${Number(
+                                            order.totalAmount || 0
+                                        ).toLocaleString("en-IN")}
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="status-area">
+
+                                <div class="status-row">
+
+                                    <span class="status-heading">
+                                        Current Status
+                                    </span>
+
+                                    <span class="order-status ${statusClass}">
+                                        ${status}
+                                    </span>
+
+                                </div>
+
+
+                                <div class="status-message">
+
+                                    <strong>
+                                        ${messageTitle}
+                                    </strong>
+
+                                    <br>
+
+                                    ${messageText}
+
+                                </div>
+
+
+                                <div class="timeline">
+
+                                    <div
+                                        class="timeline-progress"
+                                    ></div>
+
+
+                                    <div
+                                        class="timeline-step"
+                                        data-step="0"
+                                    >
+
+                                        <div class="timeline-circle">
+                                            ✓
+                                        </div>
+
+                                        <div class="timeline-label">
+                                            Placed
+                                        </div>
+
+                                    </div>
+
+
+                                    <div
+                                        class="timeline-step"
+                                        data-step="1"
+                                    >
+
+                                        <div class="timeline-circle">
+                                            ✓
+                                        </div>
+
+                                        <div class="timeline-label">
+                                            Confirmed
+                                        </div>
+
+                                    </div>
+
+
+                                    <div
+                                        class="timeline-step"
+                                        data-step="2"
+                                    >
+
+                                        <div class="timeline-circle">
+                                            ✓
+                                        </div>
+
+                                        <div class="timeline-label">
+                                            Preparing
+                                        </div>
+
+                                    </div>
+
+
+                                    <div
+                                        class="timeline-step"
+                                        data-step="3"
+                                    >
+
+                                        <div class="timeline-circle">
+                                            ✓
+                                        </div>
+
+                                        <div class="timeline-label">
+                                            Delivery
+                                        </div>
+
+                                    </div>
+
+
+                                    <div
+                                        class="timeline-step"
+                                        data-step="4"
+                                    >
+
+                                        <div class="timeline-circle">
+                                            ✓
+                                        </div>
+
+                                        <div class="timeline-label">
+                                            Delivered
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="products-area">
+
+                                <h2 class="products-title">
+                                    Ordered Products
+                                </h2>
+
+                                <div class="products-list"></div>
+
+                            </div>
+
+
+                            <div class="summary-area">
+
+                                <div class="summary-row">
+
+                                    <span>
+                                        Total Items
+                                    </span>
+
+                                    <strong>
+                                        ${order.totalQuantity || 0}
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="summary-row">
+
+                                    <span>
+                                        Payment
+                                    </span>
+
+                                    <strong>
+                                        ${order.paymentMethod || "COD"}
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="summary-row total">
+
+                                    <span>
+                                        Order Total
+                                    </span>
+
+                                    <strong>
+                                        ₹${Number(
+                                            order.totalAmount || 0
+                                        ).toLocaleString("en-IN")}
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+
+                        // ADD CARD
+
+                        allOrdersContainer.appendChild(
+                            orderCard
+                        );
+
+
+                        // =================================
+                        // PRODUCTS
+                        // =================================
+
+                        const productsList =
+                            orderCard.querySelector(
+                                ".products-list"
+                            );
+
+
+                        const products =
+                            Array.isArray(
+                                order.products
+                            )
+                                ? order.products
+                                : [];
+
+
+                        if (
+                            products.length === 0
+                        ) {
+
+                            productsList.innerHTML = `
+
+                                <p style="color:#888;">
+                                    No product details available.
+                                </p>
+
+                            `;
+
+                        }
+
+
+                        else {
+
+
+                            products.forEach(
+                                function(product) {
+
+
+                                    const quantity =
+                                        Number(
+                                            product.quantity || 1
+                                        );
+
+
+                                    const price =
+                                        Number(
+                                            product.price || 0
+                                        );
+
+
+                                    const itemTotal =
+                                        price *
+                                        quantity;
+
+
+                                    const productItem =
+                                        document.createElement(
+                                            "div"
+                                        );
+
+
+                                    productItem.className =
+                                        "product-item";
+
+
+                                    productItem.innerHTML = `
+
+                                        <div class="product-info">
+
+                                            <div class="product-name">
+                                                ${product.name || "Product"}
+                                            </div>
+
+                                            <div class="product-details">
+
+                                                ${product.weight || "Pieces"}
+
+                                                &nbsp; • &nbsp;
+
+                                                Qty: ${quantity}
+
+                                                &nbsp; • &nbsp;
+
+                                                Unit Price: ₹${price.toLocaleString("en-IN")}
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="product-price">
+
+                                            ₹${itemTotal.toLocaleString("en-IN")}
+
+                                        </div>
+
+                                    `;
+
+
+                                    productsList.appendChild(
+                                        productItem
+                                    );
+
+                                }
+                            );
+
+                        }
+
+
+                        // =================================
+                        // TIMELINE
+                        // =================================
+
+                        const timelineSteps =
+                            orderCard.querySelectorAll(
+                                ".timeline-step"
+                            );
+
+
+                        const progress =
+                            orderCard.querySelector(
+                                ".timeline-progress"
+                            );
+
+
+                        if (
+                            currentIndex >= 0
+                        ) {
+
+
+                            timelineSteps.forEach(
+                                function(
+                                    step,
+                                    index
+                                ) {
+
+
+                                    if (
+                                        index <=
+                                        currentIndex
+                                    ) {
+
+                                        step.classList.add(
+                                            "active"
+                                        );
+
+                                    }
+
+
+                                    if (
+                                        index ===
+                                        currentIndex
+                                    ) {
+
+                                        step.classList.add(
+                                            "current"
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+
+                            const progressWidth =
+                                (
+                                    currentIndex /
+                                    4
+                                ) * 80;
+
+
+                            progress.style.width =
+                                progressWidth +
+                                "%";
+
+                        }
+
+                    }
+                );
+
+            }
+        )
+
+
+        .catch(
+            function(error) {
+
+                console.log(
+                    "Track Order Error:",
+                    error
+                );
+
+
+                allOrdersContainer.innerHTML = `
+
+                    <div class="no-orders">
+
+                        <h2>
+                            Unable to Load Orders
+                        </h2>
+
+                        <p>
+                            Please make sure your backend server is running.
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+

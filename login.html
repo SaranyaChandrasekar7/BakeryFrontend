@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="login.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">
+            🔍
+        </button>
+
+        <div
+            id="searchResults"
+            class="search-results"
+        ></div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a
+        href="cart.html"
+        class="cart-link"
+    >
+        🛒
+    </a>
+
+</nav>
+
+
+
+<!-- Login Page -->
+
+<section class="login-page">
+
+    <div class="login-container">
+
+
+        <p class="small-title">
+            WELCOME BACK
+        </p>
+
+
+        <h1>
+            Login to BakeryShop
+        </h1>
+
+
+        <p class="login-subtitle">
+            Sign in to continue your sweet journey.
+        </p>
+
+
+        <!-- Login Box -->
+
+        <div class="login-box">
+
+
+            <form id="loginForm">
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Remember -->
+
+                <div class="login-options">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                   <a href="forgot-password.html"> Forgot Password?</a>
+
+                </div>
+
+
+                <!-- Login Button -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    LOGIN →
+                </button>
+
+
+            </form>
+
+
+            <!-- Sign Up -->
+
+            <p class="signup-text">
+
+                Don't have an account?
+
+                <a href="signup.html">
+                    Sign Up
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script src="search.js"></script>
+
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+
+menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+});
+
+</script>
+
+
+<script src="login.js"></script>
+
+<script src="auth.js"></script>
+
+
+</body>
+
+</html>

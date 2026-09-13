@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">🔍</button>
+
+        <div
+            id="searchResults"
+            class="search-results">
+        </div>
+
+    </div>
+
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <!-- Login / Signup -->
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a href="cart.html" class="cart-link">
+        🛒
+    </a>
+
+</nav>
+
+    <!-- About Us -->
+
+    <section class="about-page">
+
+        <div class="about-image">
+
+            <img src="./Bakery Images/aboutbakeryimage.png" alt="Bakery">
+
+        </div>
+
+
+        <div class="about-page-content">
+
+            <p class="small-title">ABOUT US</p>
+
+            <h1>Freshly Baked With Love</h1>
+
+            <p>
+                Welcome to BakeryShop, where every treat is made
+                with love, passion and care.
+            </p>
+
+            <p>
+                From delicious cakes and delightful pastries to fresh
+                breads and sweet treats, we prepare everything using
+                quality ingredients.
+            </p>
+
+            <p>
+                Our goal is simple — to bring fresh, delicious and
+                beautiful bakery treats to every special moment.
+            </p>
+
+           <a href="#our-story" class="story-button">OUR STORY →</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Our Story -->
+
+<section class="our-story" id="our-story">
+
+    <div class="story-content">
+
+        <p class="small-title">OUR STORY</p>
+
+        <h2>A Little Story Behind Our Bakery</h2>
+
+        <p>
+            BakeryShop started with a simple love for baking and
+            a dream of making every celebration a little sweeter.
+        </p>
+
+        <p>
+            What began with freshly baked cakes and pastries slowly
+            grew into a place where people can enjoy delicious
+            bakery treats made with care and passion.
+        </p>
+
+        <p>
+            Today, we continue the same tradition by preparing
+            fresh and tasty treats with quality ingredients and
+            lots of love.
+        </p>
+
+    </div>
+
+</section>
+
+<script src="search.js"></script>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+</script>
+
+<script src="search.js"></script>
+
+<script src="auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+/* =================================
+   CAKE PAGE
+================================= */
+
+.cake-page {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image: url("./Bakery Images/chocolatecake.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+
+/* Smoky Background */
+
+.cake-page::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* Main Content */
+
+.cake-overlay {
+
+    position: relative;
+
+    z-index: 1;
+
+    padding: 130px 6% 70px;
+
+    text-align: center;
+}
+
+
+/* Small Title */
+
+.cake-small-title {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 35px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Main Heading */
+
+.cake-overlay > h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 40px;
+
+    font-style: italic;
+
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+/* Intro */
+
+.cake-intro {
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    margin-bottom: 40px;
+}
+
+
+/* Cake Products */
+
+.cake-grid {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* Cake Card */
+
+.cake-card {
+
+    background-color: rgba(255, 250, 245, 0.95);
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.cake-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Cake Image */
+
+.cake-card img {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* Image Zoom */
+
+.cake-card:hover img {
+
+    transform: scale(1.08);
+}
+
+
+/* Cake Name */
+
+.cake-card h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 19px;
+
+    color: #6b2f1d;
+
+    margin-top: 15px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Description */
+
+.cake-card p {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 58px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Price */
+
+.cake-card h3 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+/* View Product Button */
+
+.cake-card .view-product {
+
+    display: inline-block;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 10px 20px;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+/* View Product Hover */
+
+.cake-card .view-product:hover {
+
+    background-color: #6b2f1d;
+}
+
+
+.cake-page {
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image: url("./Bakery Images/Bakeryimagefirst.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+/* =================================
+   TABLET RESPONSIVE
+================================= */
+
+@media (max-width:1023px){
+
+.cake-overlay{
+    padding:100px 30px 60px;
+}
+
+.cake-small-title{
+    font-size:28px;
+}
+
+.cake-overlay h1{
+    font-size:34px;
+}
+
+.cake-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.cake-card img{
+    height:160px;
+}
+
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width:767px){
+
+.cake-page{
+    background-attachment:scroll;
+}
+
+.cake-overlay{
+    padding:80px 15px 40px;
+}
+
+.cake-small-title{
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.cake-overlay h1{
+    font-size:28px;
+}
+
+.cake-intro{
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.cake-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.cake-card{
+    padding:8px;
+}
+
+.cake-card img{
+    height:120px;
+}
+
+.cake-card h2{
+    font-size:15px;
+}
+
+.cake-card p{
+    font-size:11px;
+    min-height:45px;
+}
+
+.cake-card h3{
+    font-size:17px;
+}
+
+.cake-card .view-product{
+    width:100%;
+    padding:8px;
+    font-size:9px;
+}
+
+}
+
+/* =================================
+   iPhone SE
+================================= */
+
+@media (max-width:375px){
+
+.cake-grid{
+    gap:12px;
+}
+
+.cake-card img{
+    height:105px;
+}
+
+.cake-overlay h1{
+    font-size:24px;
+}
+
+}

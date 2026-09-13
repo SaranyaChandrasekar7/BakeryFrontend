@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cakes - BakeryShop</title>
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cake Page CSS -->
+
+    <link rel="stylesheet" href="cake.css">
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+
+    <div id="pageLoader">
+
+        <div class="loader-content">
+
+            <div class="loader-cake">🍰</div>
+
+            <div class="loader-text">
+                Loading delicious treats...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Your Navbar -->
+
+<nav class="navbar">
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <h1>Bakery<span>Shop</span></h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <div class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="auth-links">
+            <a href="login.html">Login</a>
+            <span>|</span>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <a href="cart.html" class="cart-link">🛒</a>
+
+</nav>
+
+
+    <!-- Cake Page -->
+
+    <section class="cake-page">
+
+
+        <div class="cake-overlay">
+
+
+            <p class="cake-small-title">OUR CAKES</p>
+
+            <h1>Freshly Baked Cakes</h1>
+
+            
+            <p class="cake-intro">
+                Delicious cakes made with love for every special moment.
+            </p>
+
+
+            <!-- Cake Products -->
+
+        <div class="cake-grid" id="cakeContainer">
+
+</div>
+
+</div>
+
+</section>
+
+<script src="search.js"></script>
+<script src="auth.js"></script>
+<script src="loader.js"></script>
+<script src="cake.js"></script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+
+</html>

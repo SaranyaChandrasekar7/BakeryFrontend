@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+
+    <button class="menu-toggle" id="menuToggle">
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">
+            🔍
+        </button>
+
+        <div
+            id="searchResults"
+            class="search-results"
+        ></div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a
+        href="cart.html"
+        class="cart-link"
+    >
+        🛒
+    </a>
+
+</nav>
+
+
+
+<!-- Sign Up Page -->
+
+<section class="signup-page">
+
+    <div class="signup-container">
+
+
+        <p class="small-title">
+            JOIN US
+        </p>
+
+
+        <h1>
+            Create Your Account
+        </h1>
+
+
+        <p class="signup-subtitle">
+            Create an account and start your sweet journey.
+        </p>
+
+
+        <!-- Sign Up Box -->
+
+        <div class="signup-box">
+
+
+            <form id="signupForm">
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="signupName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="signupPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="signupPhone"
+                        placeholder="Enter your phone number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="terms-box">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            required
+                        >
+
+                        I agree to the
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Sign Up Button -->
+
+                <button
+                    type="submit"
+                    class="signup-btn"
+                >
+                    CREATE ACCOUNT →
+                </button>
+
+
+            </form>
+
+
+            <!-- Login Link -->
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script src="search.js"></script>
+
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+
+menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+});
+
+</script>
+
+
+<script src="signup.js"></script>
+<script src="auth.js"></script>
+
+
+</body>
+
+</html>

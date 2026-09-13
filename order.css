@@ -1,0 +1,635 @@
+ /* Order Page */
+
+.order-page {
+
+    min-height: 100vh;
+
+    background-color: #fffaf5;
+
+    padding: 120px 8% 70px;
+
+}
+
+
+.order-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+/* Small Title */
+
+.order-container .small-title {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #e99a00;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Main Heading */
+
+.order-container h1 {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 45px;
+
+    font-style: italic;
+
+    color: #6b2f1d;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* Order Layout */
+
+.order-layout {
+
+    display: grid;
+
+    grid-template-columns: 1fr 350px;
+
+    gap: 35px;
+
+    align-items: start;
+
+}
+
+
+/* Common Box */
+
+.customer-box,
+.order-summary {
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(107, 47, 29, 0.08);
+
+}
+
+
+/* Box Heading */
+
+.customer-box h2,
+.order-summary h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #6b2f1d;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* Form Group */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Label */
+
+.form-group label {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    color: #6b2f1d;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* Input + Textarea */
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #e6d5c7;
+
+    border-radius: 10px;
+
+    background-color: #fffaf5;
+
+    color: #6b2f1d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: #e99a00;
+
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+
+    resize: vertical;
+
+}
+
+
+/* Order Item */
+
+.order-item {
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee0d2;
+
+}
+
+
+.order-item h3 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #6b2f1d;
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.order-item p {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 14px;
+
+    margin: 6px 0;
+
+}
+
+
+/* Order Item Total */
+
+.order-item .item-price {
+
+    color: #e99a00;
+
+    font-weight: bold;
+
+}
+
+
+/* Total Row */
+
+.order-total-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee0d2;
+
+    font-family: Arial, sans-serif;
+
+    color: #6b2f1d;
+
+}
+
+
+.order-total-row strong {
+
+    color: #e99a00;
+
+    font-size: 18px;
+
+}
+
+
+/* Payment */
+
+.payment-box {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background-color: #fffaf5;
+
+    border-radius: 12px;
+
+}
+
+
+.payment-box h3 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #6b2f1d;
+
+    margin-bottom: 12px;
+
+}
+
+
+.payment-box label {
+
+    font-family: Arial, sans-serif;
+
+    color: #6b625d;
+
+    font-size: 14px;
+
+}
+
+
+.payment-box input {
+
+    accent-color: #e99a00;
+
+    margin-right: 8px;
+
+}
+
+
+/* Place Order Button */
+
+#placeOrder {
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #e99a00;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+#placeOrder:hover {
+
+    background-color: #6b2f1d;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .order-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .order-summary {
+
+        position: static;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - ORDER PAGE
+   ========================================= */
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+
+    .order-page {
+        padding: 110px 5% 60px;
+    }
+
+    .order-container {
+        max-width: 100%;
+    }
+
+    .order-container h1 {
+        font-size: 38px;
+    }
+
+    .order-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .customer-box,
+    .order-summary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .order-page {
+        padding: 100px 15px 50px;
+    }
+
+
+    /* Small title */
+
+    .order-container .small-title {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+
+    /* Main heading */
+
+    .order-container h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+
+    /* Layout */
+
+    .order-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    /* Customer + Summary boxes */
+
+    .customer-box,
+    .order-summary {
+
+        padding: 20px 16px;
+        border-radius: 15px;
+        box-sizing: border-box;
+
+    }
+
+
+    /* Box headings */
+
+    .customer-box h2,
+    .order-summary h2 {
+
+        font-size: 21px;
+        margin-bottom: 20px;
+
+    }
+
+
+    /* Form */
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+
+    /* Labels */
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 7px;
+    }
+
+
+    /* Inputs */
+
+    .form-group input,
+    .form-group textarea {
+
+        width: 100%;
+        padding: 12px 13px;
+        font-size: 13px;
+        border-radius: 9px;
+
+    }
+
+
+    /* Textarea */
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+
+    /* Order items */
+
+    .order-item {
+        padding: 13px 0;
+    }
+
+
+    .order-item h3 {
+        font-size: 16px;
+        line-height: 1.3;
+        margin-bottom: 6px;
+    }
+
+
+    .order-item p {
+        font-size: 13px;
+        margin: 5px 0;
+        line-height: 1.4;
+    }
+
+
+    /* Total rows */
+
+    .order-total-row {
+        padding: 13px 0;
+        font-size: 13px;
+    }
+
+
+    .order-total-row strong {
+        font-size: 17px;
+    }
+
+
+    /* Payment */
+
+    .payment-box {
+
+        margin-top: 20px;
+        padding: 16px;
+        border-radius: 11px;
+
+    }
+
+
+    .payment-box h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+
+    .payment-box label {
+        font-size: 13px;
+    }
+
+
+    /* Place Order */
+
+    #placeOrder {
+
+        padding: 13px 15px;
+        margin-top: 20px;
+        font-size: 12px;
+        border-radius: 23px;
+
+    }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 400px) {
+
+    .order-page {
+        padding: 95px 10px 45px;
+    }
+
+
+    .order-container h1 {
+        font-size: 27px;
+    }
+
+
+    .customer-box,
+    .order-summary {
+        padding: 18px 13px;
+    }
+
+
+    .customer-box h2,
+    .order-summary h2 {
+        font-size: 19px;
+    }
+
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 12px;
+        padding: 11px 12px;
+    }
+
+
+    .order-item h3 {
+        font-size: 15px;
+    }
+
+
+    .order-item p {
+        font-size: 12px;
+    }
+
+
+    .order-total-row {
+        font-size: 12px;
+    }
+
+
+    .order-total-row strong {
+        font-size: 16px;
+    }
+
+
+    .payment-box {
+        padding: 14px;
+    }
+
+
+    .payment-box h3 {
+        font-size: 16px;
+    }
+
+
+    .payment-box label {
+        font-size: 12px;
+    }
+
+}

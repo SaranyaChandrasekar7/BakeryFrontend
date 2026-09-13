@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Order Success - BakeryShop</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="ordersuccess.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+
+    <!-- Mobile Menu -->
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+    >
+        ☰
+    </button>
+
+
+    <!-- Logo -->
+
+    <h1>
+        Bakery<span>Shop</span>
+    </h1>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button id="searchBtn">
+            🔍
+        </button>
+
+        <div
+            id="searchResults"
+            class="search-results"
+        ></div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <div
+        class="nav-menu"
+        id="navMenu"
+    >
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="auth-links">
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <span>|</span>
+
+            <a href="signup.html">
+                Sign Up
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cart -->
+
+    <a
+        href="cart.html"
+        class="cart-link"
+    >
+        🛒
+    </a>
+
+</nav>
+
+
+
+<!-- =================================
+     SUCCESS PAGE
+================================= -->
+
+<section class="success-page">
+
+    <div class="success-box">
+
+
+        <!-- SUCCESS ICON -->
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <!-- THANK YOU -->
+
+        <p class="small-title">
+            THANK YOU
+        </p>
+
+
+        <!-- TITLE -->
+
+        <h1>
+            Order Placed Successfully!
+        </h1>
+
+
+        <!-- MESSAGE -->
+
+        <p class="success-text">
+
+            Your delicious order has been
+            successfully placed.
+
+            <br>
+
+            Thank you for choosing BakeryShop ❤️
+
+        </p>
+
+
+        <!-- =================================
+             ORDER ID
+        ================================= -->
+
+        <div
+            id="orderIdBox"
+            style="
+                margin: 20px 0;
+                padding: 15px;
+                background: #fff8f0;
+                border-radius: 10px;
+            "
+        >
+
+            <p
+                style="
+                    margin: 0 0 8px;
+                    font-weight: bold;
+                "
+            >
+                Your Order ID
+            </p>
+
+
+            <p
+                id="orderId"
+                style="
+                    margin: 0;
+                    font-weight: bold;
+                    color: #6b3e26;
+                    word-break: break-all;
+                "
+            >
+                Loading...
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+             TRACK ORDER
+        ================================= -->
+
+        <button
+            id="trackOrderBtn"
+            type="button"
+        >
+            TRACK MY ORDER →
+        </button>
+
+
+        <br><br>
+
+
+        <!-- =================================
+             CONTINUE SHOPPING
+        ================================= -->
+
+        <button
+            type="button"
+            onclick="window.location.href='products.html'"
+        >
+            CONTINUE SHOPPING →
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- SEARCH -->
+
+<script src="search.js"></script>
+
+<!-- AUTH -->
+
+<script src="auth.js"></script>
+
+
+
+<!-- =================================
+     MENU SCRIPT
+================================= -->
+
+<script>
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+
+menuToggle.addEventListener(
+    "click",
+    () => {
+
+        navMenu.classList.toggle("active");
+
+    }
+);
+
+</script>
+
+
+
+<!-- =================================
+     ORDER ID SCRIPT
+================================= -->
+
+<script>
+
+const orderId =
+    localStorage.getItem("lastOrderId");
+
+
+const orderIdElement =
+    document.getElementById("orderId");
+
+
+const trackOrderBtn =
+    document.getElementById("trackOrderBtn");
+
+
+// =================================
+// SHOW ORDER ID
+// =================================
+
+if (orderId) {
+
+    orderIdElement.textContent =
+        orderId;
+
+} else {
+
+    orderIdElement.textContent =
+        "Order ID not available";
+
+}
+
+
+// =================================
+// TRACK ORDER BUTTON
+// =================================
+
+trackOrderBtn.addEventListener(
+    "click",
+    function() {
+
+        if (!orderId) {
+
+            alert(
+                "Order ID not found."
+            );
+
+            return;
+        }
+
+
+        // Next step-la
+        // order tracking page create pannuvom.
+
+        window.location.href =
+            "trackorder.html";
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+

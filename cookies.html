@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cookies - BakeryShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="cookies.css">
+
+</head>
+
+<body>
+
+    <body>
+
+    <!-- PAGE LOADER -->
+
+    <div id="pageLoader">
+
+        <div class="loader-content">
+
+            <div class="loader-cake">🍰</div>
+
+            <div class="loader-text">
+                Loading delicious treats...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Your Navbar -->
+
+    <!-- Navbar -->
+<nav class="navbar">
+
+    <!-- Mobile Menu -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <!-- Logo -->
+    <h1>Bakery<span>Shop</span></h1>
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+
+        <div id="searchResults" class="search-results"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+                            <!-- TRACK ORDER -->
+
+                <li>
+                    <a href="trackorder.html">Track Order</a>
+                </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="auth-links">
+            <a href="login.html">Login</a>
+            <span>|</span>
+            <a href="signup.html">Sign Up</a>
+        </div>
+
+    </div>
+
+    <!-- Cart -->
+    <a href="cart.html" class="cart-link">🛒</a>
+
+</nav>
+
+    <!-- Cookies Page -->
+
+    <section class="cookies-page">
+
+        <div class="cookies-overlay">
+
+            <p class="cookies-small-title">OUR COOKIES</p>
+
+            <h1>Freshly Baked Cookies</h1>
+
+            <p class="cookies-intro">
+                Crispy, crunchy and delicious cookies baked fresh for you.
+            </p>
+
+
+            <div class="cookies-grid" id="cookiecakeContainer">
+
+</div>
+
+
+        </div>
+
+    </section>
+
+    <script src="search.js"></script>
+
+    <script src="auth.js"></script>
+    <script src="loader.js"></script>
+    <script src="cookie.js"></script>
+
+    <script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+</script>
+
+</body>
+
+</html>
